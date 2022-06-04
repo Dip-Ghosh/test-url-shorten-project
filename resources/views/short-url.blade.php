@@ -110,7 +110,7 @@
                     "_token": "{{ csrf_token() }}"
                 },
                 success: function(response){
-                    window.location.href = response.url;
+
                 }
             });
         });
