@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+$namespace = 'App\Http\Controllers';
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', $namespace . '\ShortenUrlController@create')->name('create');
+Route::post('store', $namespace . '\ShortenUrlController@createUrl')->name('save');
+Route::post('visits', $namespace . '\ShortenUrlController@saveVisit')->name('visit');
+
